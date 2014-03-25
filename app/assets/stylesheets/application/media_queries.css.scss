@@ -23,3 +23,17 @@
 @media print {
   @include h5bp-media-print;
 }
+
+@media screen and (max-width:480px) {
+
+  .logo {
+    margin-left: 22px;
+  }
+  .big-image {
+    height: 300px;
+
+    .order-main-content {
+
+    }
+  }
+}

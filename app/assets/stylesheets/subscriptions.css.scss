@@ -1,0 +1,76 @@
+.checkout {
+  background: #fafafa;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 40px;
+}
+
+.white-container {
+  border: 1px solid #e6e6e6;
+  background: #fff;
+}
+
+.checkout-form {
+  width: 413px;
+  padding: 30px;
+
+  h1 {
+    font-size: 18px;
+    margin: 0;
+    color: #3e3e3e;
+  }
+}
+
+#credit-cards {
+  display: block;
+  background: image-url("cards-sprite.png") -8px -14px no-repeat;
+  height: 34px;
+  width: 351px;
+
+  &.unknown {
+    background-position: -8px -14px;
+  }
+
+  &.visa {
+    background-position: -8px -118px;
+  }
+
+  &.mastercard {
+    background-position: -8px -48px;
+  }
+
+  &.amex {
+    background-position: -8px -83px;
+  }
+
+  &.discover {
+    background-position: -8px -234px;
+  }
+
+  &.dinersclub {
+    background-position: -8px -156px;
+  }
+
+  &.jcb {
+    background-position: -8px -194px;
+  }
+}
+
+.form-field-expiration {
+  span {
+    font-size: 30px;
+    top: 6px;
+    position: relative;
+  }
+
+  input {
+    display: inline-block;
+
+    &:first-child {
+      width: 60px;
+    }
+
+    &:last-child {
+      width: 90px;
+    }
+  }
+}

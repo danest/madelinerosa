@@ -3,8 +3,12 @@ Madelinerosa::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
   resources :users
+  resources :subscriptions
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -53,4 +57,5 @@ Madelinerosa::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'static_pages#index'
 end

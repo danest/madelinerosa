@@ -1,1 +1,14 @@
-HELLOO
+<h1>Hello</h1>
+
+<%= current_user.first_name %></br>
+<%= current_user.last_name %>
+
+<%= current_user.subscriptions.count %>
+
+<h2>Your Subscription</h2>
+
+<%= current_user.subscriptions.first.first_name  %>
+<%= current_user.subscriptions.first.last_name  %>
+<p>
+  <%= link_to "Recipient/Credit Card Page", new_subscription_path %>
+</p>

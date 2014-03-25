@@ -1,5 +1,14 @@
-<footer id="footer">
-  <small class="copyright">
-    Madelinerosa, Copyright &copy; <%= Date.today.year %>
-  </small>
-</footer>
+<div class="footer clearfix">
+  <footer class="container" id="footer">
+    <small class="copyright">
+      Madelinerosa &copy; <%= Date.today.year %>
+    </small>
+    <small class="contactus">
+    Contact us at <a href="mailto:onetinybit@gmail.com?subject=Feedback about MadelineROSA" "OneTinyBit@gmail.com">OneTinyBit@gmail.com</a>
+    </small>
+  </footer>
+</div>
+
+<p>
+  <%= debug(params) if Rails.env.development? %>
+</p>

@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require h5bp
 //= require turbolinks
+//= require jquery.payment
+//= require subscriptions
+//= require jquery.easyModal
+//= require scripts
 

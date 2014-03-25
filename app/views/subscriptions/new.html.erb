@@ -1,0 +1,65 @@
+<%= render "header" %>
+
+<div class="checkout">
+  <div class="container">
+    <div class="checkout-form white-container">
+      <h1>Reciepient Information.</h1>
+
+      <% if @subscription.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+            The form contains <%= pluralize(@subscription.errors.count, "error") %>.
+          </div>
+          <ul>
+          <% @subscription.errors.full_messages.each do |msg| %>
+            <li>* <%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= form_for(@subscription) do |f| %>
+        <div class="form-field">
+          <%= f.text_field :first_name %>
+        </div>
+        <div class="form-field">
+          <%= f.text_field :last_name %>
+        </div>
+        <div class="form-field">
+          <%= f.text_field :address_line_one %>
+        </div>
+        <div class="form-field">
+          <%= f.text_field :address_line_two %>
+        </div>
+        <div class="form-field">
+          <%= f.text_field :zipcode %>
+        </div>
+        <div class="form-field">
+          <%= f.phone_field :phone_number %>
+        </div>
+        <%= f.hidden_field :plan, :value => '25_basic' %>
+        <h1>Payment Method.</h1>
+        <span id="credit-cards"></span>
+        <span class="payment-errors"></span>
+        <div class="form-field">
+          <%= text_field_tag 'full_name',
+          "#{current_user.first_name} #{current_user.last_name}"%>
+        </div>
+        <div class="form-field">
+          <%= text_field_tag :card_number, nil, name: nil, :placeholder => "Card Number", :data => {:stripe => 'number' }%>
+        </div>
+        <div class="form-field">
+          <%= text_field_tag :cvc, nil, name: nil, :placeholder => "CVC", :data => {:stripe => 'cvc' }%>
+        </div>
+        <%= label_tag :exp_month , 'Expiration (MM/YYYY)'%></br>
+        <div class="form-field form-field-expiration">
+          <%= text_field_tag :exp_month, nil, name: nil, :placeholder => "MM", :maxlength => '2', :size => '2', :data => {:stripe => 'exp-month' }%>
+          <span>/</span>
+          <%= text_field_tag :exp_year, nil, name: nil, :placeholder => "YYYY", :maxlength => '4', :size => '4', :data => {:stripe => 'exp-year' }%>
+        </div>
+        <div class="form-field">
+          <%= f.submit "Place order", class: 'btn red' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

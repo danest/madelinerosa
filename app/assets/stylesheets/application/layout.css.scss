@@ -5,6 +5,271 @@
 //-----------------------------------------
 // Layout styles
 //-----------------------------------------
+*{box-sizing: border-box;}
 
 html {}
-body {}
+
+body {
+   font-family: "Helvetica Neue", "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    /* Retina-specific stuff here */
+    .big-image {
+      background-image: image-url("hero-image@2x.png") !important;
+    }
+
+    .logo {
+      background: image-url("logo@2x.png") 0 0 no-repeat !important;
+      background-size: 173px 22px !important;
+    }
+}
+
+.logo {
+  background: image-url("logo.png") 0 0 no-repeat;
+  display: inline-block;
+  width: 175px;
+  height: 25px;
+}
+
+#header {
+  padding-top: 30px;
+}
+
+.big-image {
+  background-image: image-url("hero-image.png");
+  background-position: center center;
+  background-repeat: none;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 673px;
+  position: relative;
+
+}
+
+.header-links {
+  display: inline-block;
+  padding: 0;
+  margin:0;
+  float: right;
+
+  li {
+    padding-left: 30px;
+    list-style-type: none;
+    float: left;
+
+    a {
+      text-decoration: none;
+      font-size: 14px;
+      color: #000000;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.order-main-content {
+  color: #fff;
+  width: 910px;
+  height: 145px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 113px;
+
+
+  h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.order-button-container {
+  width: 210px;
+  margin: 0 auto;
+
+  p {
+    font-size: 14px;
+    font-style: italic;
+  }
+}
+
+.btn {
+  height: 38px;
+  width: 210px;
+  text-align: center;
+  line-height: 38px;
+  text-transform: uppercase;
+  border: none;
+
+  &.red {
+    background-color: #c5244a;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.steps {
+  background: #ebebeb;
+  height: 310px;
+  text-align: center;
+  padding-top: 50px;
+
+  h1, h2 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: #3e3e3e;
+  }
+
+  h1 {
+    font-size: 24px;
+    padding-bottom: 35px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .step {
+    width: 260px;
+    display: block;
+    float: left;
+    text-align: left;
+
+    img {
+      float: left;
+    }
+
+    p {
+      margin-left: 60px;
+      margin-top: 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &.step-two, &.step-three {
+      margin-left: 65px;
+    }
+  }
+}
+
+.about-us {
+  padding: 50px 0;
+
+  .map {
+    float: left;
+  }
+
+  .info {
+    text-align: right;
+    float: right;
+    width: 500px;
+  }
+
+  .button-holder {
+    float: right;
+  }
+}
+
+.faq {
+  background: #6c6c6c;
+  color: #ffffff;
+
+  h3 {
+    font-size: 16px;
+  }
+
+  p {
+    color: #d7d7d7;
+  }
+}
+
+.signup {
+  background: #ffffff;
+  width: 330px;
+  height: 420px;
+  border-radius: 3px;
+
+  h3 {
+    text-align: center;
+  }
+
+  form {
+    border-top: 1px solid #dcdcdc;
+  }
+}
+
+.signup-container {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.form-field input {
+  border: 1px solid #dcdcdc;
+  height: 40px;
+  border-radius: 3px;
+  margin-top: 20px;
+  box-shadow: none;
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+
+  &.btn.red {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    line-height: 40px;
+    padding: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer {
+  background: #1e1e1e;
+  color: #fff;
+  padding: 10px 0;
+  small {
+    a {
+      color: #fff;
+    }
+  }
+}

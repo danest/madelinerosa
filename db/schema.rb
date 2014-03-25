@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309061224) do
+ActiveRecord::Schema.define(version: 20140310055616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "subscriptions", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address_line_one"
+    t.string   "address_line_two"
+    t.string   "zipcode"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "phone_number"
+    t.string   "plan"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -23,8 +36,11 @@ ActiveRecord::Schema.define(version: 20140309061224) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "remember_token"
+    t.string   "stripe_customer_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

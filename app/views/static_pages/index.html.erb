@@ -1,0 +1,111 @@
+<% title "Flower Delivery San Francisco Florist" %>
+<div class='big-image'>
+  <%= render "header" %>
+
+  <div class="order-main-content">
+    <h1>Delight that special someone with flowers, #justbecause.</h1>
+    <h2>For just $35/mo we'll send them a bouquet of flowers when they least expect it.</h2>
+    <div class="order-button-container">
+      <div class="btn red">
+        <a href="/signup" title="Order Now">Order Now</a>
+      </div>
+      <p>Currently in San Francisco.</p>
+    </div>
+  </div>
+</div>
+<div class="steps how-it-works" id="howitworks">
+  <div class="container clearfix">
+    <h1>Flower Delivery in San Francisco.</h1>
+    <h2>How it works.</h2>
+    <div class="clearfix"></div>
+    <div class="step step-one">
+      <%= image_tag("icon-heart@2x.png", size: "45x46") %>
+      <p>
+        <b>Sign up and Order</b></br>
+        Sign up with MadelineRosa today and for just $35 a month we send that special someone a unqiue bouquet of flowers handpicked by us and our local florists. Your first order will even come with a <b>FREE</b> vase.
+      </p>
+    </div>
+    <div class="step step-two">
+      <%= image_tag("icon-flower@2x.png", size: "45x46") %>
+      <p>
+        <b>Surprise Delivery</b></br>
+        Every month, we’ll pick a date to hand deliver the flowers. And don’t worry, shipping is <b>FREE</b>. They’ll receive a different bouquet every month on a random day and we’ll let you know what to expect before it’s delivered.
+      </p>
+    </div>
+    <div class="step step-three">
+      <%= image_tag("icon-cart@2x.png", size: "45x46") %>
+      <p>
+        <b>Giving Back</b></br>
+        Our mission is to delight the world. For every bouquet we deliver, we’ll donate a flower to a child at a local hospital. We’ll even send you a picture of the flower we’ll be donating.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="about-us" id="aboutus">
+  <div class="container clearfix">
+    <div class="map">
+      <%= image_tag("map@2x.png", size: "250x250") %>
+    </div>
+    <div class="info">
+      <h3>About Us</h3>
+      <p>
+        We only work with local florist in San Fransico, that will gaurantee that your special someone will receive the freshest flowers.
+      </p>
+      <div class="button-holder">
+        <div class="btn red">
+          <a href="/signup" title="Order Now">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="faq" id="faq">
+  <div class="container clearfix">
+    <h3>What flowers will they be receiving?</h3>
+    <p>We'll hand pick our bouquet of the month so the flowers will change every month. We’ll notify you with an email every month before the delivery goes out with our bouquet of the month.</p>
+    <h3>How much will shipping cost?</h3>
+    <p>Don’t worry about the shipping cost, that comes <b>FREE</b> with your order.</p>
+    <h3>Where are the flowers coming from?</h3>
+    <p>We do our best to help out our local community and economy. We’ll be closely working with local florists to design the bouquets from locally grown flowers.</p>
+    <h3>When will I be billed?</h3>
+    <p>You’ll be billed when you place your first order. After that first month, you’ll be charged the first of every month.</p>
+  </div>
+</div>
+</div>
+
+<div class="signup" id="signup">
+  <h3>Sign up</h3>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-error">
+        The form contains <%= pluralize(@user.errors.count, "error") %>.
+      </div>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li>* <%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
+    <div class="signup-container">
+      <div class="form-field">
+        <%= f.text_field :first_name, placeholder: "First Name" %>
+      </div>
+      <div class="form-field">
+        <%= f.text_field :last_name, placeholder: "Last Name" %></br>
+      </div>
+      <div class="form-field">
+        <%= f.text_field :email, placeholder: "Email Address" %>
+      </div>
+      <div class="form-field">
+        <%= f.password_field :password, placeholder: "Password" %></br>
+      </div>
+      <div class="form-field">
+        <%= f.submit "Get Started", class: 'btn red' %>
+      </div>
+    </div>
+  <% end %>
+</div>
