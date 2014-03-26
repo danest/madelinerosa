@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   $('#signup').easyModal();
-  $('.btn.red').click(function(e){
+  $('.order-button-container .btn.red').click(function(e){
     $('#signup').trigger('openModal');
     e.preventDefault();
   });
