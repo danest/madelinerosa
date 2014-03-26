@@ -12,7 +12,7 @@
 </script>
 <script type="text/javascript">
   function trackButton(e) {
-    _gaq.push(['_trackEvent', e.target.id || e.target.className, 'clicked']);
+    ga('send', 'event', e.target.id || e.target.className, 'clicked');
   };
 
   var buttons = document.querySelectorAll('*');
