@@ -1,12 +1,18 @@
-<h1>Sign In</h1>
+<%= render "header" %>
+<div class="container">
+  <div class="signin">
+    <h1>Sign In</h1>
 
-<%= form_for(:session, url: sessions_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %></br>
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <div class="form-field">
+        <%= f.text_field :email, placeholder: "Email" %></br>
+      </div>
+      <div class="form-field">
+        <%= f.password_field :password, placeholder: "Password" %>
+      </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit "Sign in" %>
-<% end %>
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      <%= f.submit "Sign in", class: 'btn red' %>
+    <% end %>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
