@@ -7,6 +7,11 @@
       <li><a href="/#faq" title="FAQs">FAQs</a></li>
       <li>
         <% if signed_in? %>
+          <%= link_to "My Account", current_user %>
+        <% end %>
+      </li>
+      <li>
+        <% if signed_in? %>
           <%= link_to "Sign out", signout_path, method: "delete" %>
         <% else %>
           <%= link_to "Sign in", signin_path %>

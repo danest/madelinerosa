@@ -1,16 +1,16 @@
-<h1>Hello</h1>
+<%= render "header" %>
 
-<%= current_user.first_name %></br>
-<%= current_user.last_name %>
-
-<%= current_user.subscriptions.count %>
-
-<h4>In development</h4>
-
-<h2>Your Subscription</h2>
-
-<%= current_user.subscriptions.first.first_name  %>
-<%= current_user.subscriptions.first.last_name  %>
-<p>
-  <%= link_to "Recipient/Credit Card Page", new_subscription_path %>
-</p>
+<div class="usershow">
+  <div class="container">
+    <% if current_user.subscriptions.count > 0 %>
+      <h2>Your Subscription</h2>
+      <%= current_user.subscriptions.first.first_name  %>
+      <%= current_user.subscriptions.first.last_name  %>
+    <% else %>
+      <h1>Order Flowers</h1>
+      <p>
+        <%= link_to "Order Flowers", new_subscription_path %>
+      </p>
+    <% end %>
+  </div>
+</div>

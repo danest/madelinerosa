@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:show]
+  before_filter :correct_user, only: [:show]
 
   def show
     @user = User.find(params[:id])
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Thank you for signing up. Please finish your order."
       sign_in @user
-      redirect_to @user
+      redirect_to new_subscription_path
     else
       render new_user_path
     end
