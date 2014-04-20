@@ -1,6 +1,6 @@
 class Subscription < ActiveRecord::Base
-  belongs_to :user
-  validates :user_id, :presence => true
+  belongs_to :user, inverse_of: :subscriptions
+  #validates :user_id, :presence => true
   validates :user, :presence => true
   validates :first_name, :presence => true
   validates :last_name, :presence => true

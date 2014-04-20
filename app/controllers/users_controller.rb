@@ -8,24 +8,35 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.subscriptions.build
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
+    @user.first_name = "TEST"
+    @user.last_name = "LAST NAME TEST"
+    #@user.subscriptions.build(user_params["subscriptions_attributes"]["0"])
+    puts user_params
+    puts user_params["subscriptions"]
     if @user.save
+      puts @user.subscriptions
       flash[:success] = "Thank you for signing up. Please finish your order."
       sign_in @user
       redirect_to new_subscription_path
     else
-      render new_user_path
+      puts @user.inspect
+      puts @user.subscriptions.inspect
+      render 'new'
     end
   end
 
   private
     def user_params
       params.require(:user)
-            .permit(:first_name, :last_name,
-                    :email, :password)
+            .permit(:email, :password,
+              :subscriptions_attributes => [:user_id, :first_name, :last_name,
+                    :address_line_one, :address_line_two,
+                    :zipcode, :phone_number, :plan])
     end
 
     def correct_user

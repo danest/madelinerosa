@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_remember_token
 
-
   validates :first_name,  presence: true
   validates :last_name,  presence: true
   validates :email, presence: true,
@@ -12,8 +11,10 @@ class User < ActiveRecord::Base
   has_secure_password validations: false
   validates_presence_of :password, on: :create
 
-  has_many :subscriptions
+  has_many :subscriptions, :inverse_of => :user
   validates_associated :subscriptions
+
+  accepts_nested_attributes_for :subscriptions
 
 
   def User.new_remember_token
