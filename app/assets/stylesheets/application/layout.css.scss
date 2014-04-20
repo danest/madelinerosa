@@ -24,12 +24,25 @@ body {
 }
 
 
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    /* Retina-specific stuff here */
+    .big-image {
+      background-image: image-url("hero-image@2x.png") !important;
+    }
+
+    .logo {
+      background: image-url("logo@2x.png") 0 0 no-repeat !important;
+      background-size: 173px 22px !important;
+    }
+}
+
 .logo {
-  background: image-url("logo@2x.png") 0 0 no-repeat;
+  background: image-url("logo.png") 0 0 no-repeat;
   display: inline-block;
   width: 175px;
   height: 25px;
-  background-size:173px 22px;
 }
 
 #header {
@@ -37,7 +50,7 @@ body {
 }
 
 .big-image {
-  background-image: image-url("hero-image@2x.png");
+  background-image: image-url("hero-image.png");
   background-position: center center;
   background-repeat: none;
   -webkit-background-size: cover;
