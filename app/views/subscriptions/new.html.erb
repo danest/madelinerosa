@@ -19,25 +19,25 @@
       <% end %>
       <%= form_for(@subscription) do |f| %>
         <div class="form-field">
-          <%= f.text_field :first_name %>
+          <%= f.text_field :first_name, placeholder: "First Name" %>
         </div>
         <div class="form-field">
-          <%= f.text_field :last_name %>
+          <%= f.text_field :last_name, placeholder: "Last Name" %>
         </div>
         <div class="form-field">
-          <%= f.text_field :address_line_one %>
+          <%= f.text_field :address_line_one, placeholder: "Address Line 1" %>
         </div>
         <div class="form-field">
-          <%= f.text_field :address_line_two %>
+          <%= f.text_field :address_line_two, placeholder: "Address Line 2" %>
         </div>
         <div class="form-field">
-          <%= f.text_field :zipcode %>
+          <%= f.text_field :zipcode, placeholder: "Zipcode" %>
         </div>
         <div class="form-field">
-          <%= f.phone_field :phone_number %>
+          <%= f.phone_field :phone_number, placeholder: "Phone Number" %>
         </div>
-        <%= f.hidden_field :plan, :value => '25_basic' %>
-        <h1>Payment Method.</h1>
+        <%= f.hidden_field :plan, :value => '35_madelinerosa' %>
+        <h1 class="paymentmethod">Payment Method.</h1>
         <span id="credit-cards"></span>
         <span class="payment-errors"></span>
         <div class="form-field">
@@ -61,5 +61,15 @@
         </div>
       <% end %>
     </div>
+    <div class="checkout-info white-container">
+      <h1>Delight that special some for just $35/mo.</h1>
+      <h2>What they will receive:</h2>
+      <ul>
+        <li>A unique bouquet of fresh and locally grown flowers every month, delivered right to their door.</li>
+        <li>A <b>FREE</b> vase with their first bouquet.</li>
+        <li>The feeling of surprise when they least expect it.</br><i>And most importantly a smile when they know their loved ones are thinking about them</i></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
   </div>
 </div>

@@ -7,12 +7,13 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-17557178-16', 'madelinerosa.com');
+  ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
 
 </script>
 <script type="text/javascript">
   function trackButton(e) {
-    _gaq.push(['_trackEvent', e.target.id || e.target.className, 'clicked']);
+    ga('send', 'event', e.target.id || e.target.className, 'clicked');
   };
 
   var buttons = document.querySelectorAll('*');
@@ -20,3 +21,18 @@
     buttons[i].addEventListener('click', trackButton);
   }
 </script>
+
+<!-- Begin Inspectlet Embed Code -->
+<script type="text/javascript" id="inspectletjs">
+  window.__insp = window.__insp || [];
+  __insp.push(['wid', 1194657850]);
+  (function() {
+    function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+    if (window.attachEvent){
+      window.attachEvent('onload', __ldinsp);
+    }else{
+      window.addEventListener('load', __ldinsp, false);
+    }
+  })();
+</script>
+<!-- End Inspectlet Embed Code -->
